@@ -23,6 +23,9 @@ const getItems = () => ({
         }
         const bodyData = { ...this.editItem} //spread operator 
         axios.post(url, bodyData, {headers: headers})
-            .then(response => console.log(response.data))
+            .then(response => {
+                this.filteredItems = [response.data, ...this.filteredItems]
+                this.resetForm()
+            })
     },
 })
