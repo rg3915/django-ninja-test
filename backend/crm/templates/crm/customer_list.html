@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div x-data="getItems">
+    <h1>Lista de clientes</h1>
+        <!-- Button trigger modal -->
+    <button 
+    type="button" 
+    class="btn btn-primary" 
+    data-bs-toggle="modal" 
+    data-bs-target="#myModal"
+    @click="resetForm"
+    >
+    Adicionar
+    </button>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nomes</th>
+            </tr>
+        </thead>
+    </table>
+    <tbody>
+        <template x-for="item in filteredItems" :key="item.id">
+            <tr>
+                <td x-text="item.name"></td>
+            </tr>
+        </template>
+    </tbody>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Adicionar</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <label for="">Nome</label>
+          <input 
+          id="id_name" 
+          name="name" 
+          class="form-control" 
+          type="text" 
+          maxlenght="100"
+          x-model="editItem.name"
+          >
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" @click="saveData">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock content %}
+
+{% block js %}
+<script src="{% static 'js/crm/customer.js' %}"></script>
+{% endblock js %}
