@@ -37,15 +37,16 @@ const getItems = () => ({
     },
 
     editItemFn(item) {
-        console.log("teste");
+        console.log("Editando item:", item);
         this.editItem = { ...item }; // Copia os dados do item para o editItem
     },
 
-    delete(item) {
+    delete(item) {  
         axios.delete(`${url}${item.id}/`, { headers: headers })
             .then(() => {
                 this.filteredItems = this.filteredItems.filter(i => i.id !== item.id);
                 this.resetForm();
+                console.log("Deletando item:", item);
             });
     },
 });
