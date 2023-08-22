@@ -1,0 +1,16 @@
+# Django-Ninja e Alpine.Js!
+Projeto simples de CRUD usando Django-ninja e Alpine.js
+
+
+# API Documentada
+
+Após instalação do sistema voce pode ver as urls hein: http://127.0.0.1:8000/api/v1/docs
+
+## Instalando
+
+ 1. python -m venv venv
+ 2. ative a venv
+ 3. pip install -r requisitos.txt
+ 4. vejas as migrações
+ 5. rode o servidor
+ 6. localhost:8000
