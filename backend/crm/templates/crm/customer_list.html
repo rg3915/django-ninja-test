@@ -29,8 +29,8 @@
             <tr>
               <td x-text="item.name"></td>
               <td>
-                <button class="btn btn-sm btn-info"  @click="editItem(item)">Editar</button>
-                <button class="btn btn-sm btn-danger" @click="deleteItem(item)">Deletar</button>
+                <button class="btn btn-sm btn-info"  @click="editItemFn(item)">Editar</button>
+                <button class="btn btn-sm btn-danger" @click="delete(item)">Deletar</button>
             </td>
             </tr>
         </template>
