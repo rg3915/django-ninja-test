@@ -31,13 +31,15 @@
               <td>
                 <button 
                 class="btn btn-sm btn-info"   
-                @click="editItemFn(item)"
                 data-bs-toggle="modal" 
                 data-bs-target="#myModal"
-                >Editar</button>
+                @click="editItemFn(item)"
+                >Editar
+                </button>
+
                 <button 
                 class="btn btn-sm btn-danger" 
-                @click="delete(item)"
+                @click="deleteItemFn(item)"
                 >Deletar</button>
             </td>
             </tr>
