@@ -1,4 +1,4 @@
-Django
 django-extensions==3.2.3
-django-ninja
+django-ninja==0.22.2
+Django==4.2.4
 python-decouple==3.8
